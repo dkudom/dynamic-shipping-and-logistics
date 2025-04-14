@@ -56,7 +56,7 @@ export function DashboardNavbar() {
               <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic</span> Shipping and Logistics
             </span>
             <span className="inline-block sm:hidden relative">
-              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">DS</span>
+              <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic Shipping and Logistics</span>
             </span>
           </div>
         </Link>

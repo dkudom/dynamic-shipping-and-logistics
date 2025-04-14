@@ -40,7 +40,7 @@ export default function ContactPage() {
         <Link href="/" className="flex items-center gap-2 text-xl font-bold text-white">
           <Package2 className="h-6 w-6 text-[#003087]" />
           <span className="hidden sm:inline-block">Dynamic Shipping and Logistics</span>
-          <span className="inline-block sm:hidden">Dynamic</span>
+          <span className="inline-block sm:hidden">Dynamic Shipping and Logistics</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
