@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Connection Test</title>
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4338ca;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Supabase Connection Test</h1>
+    <p>This tool will help you test your Supabase connection to diagnose issues with your setup.</p>
+    
+    <div class="form-group">
+        <label for="supabaseUrl">Supabase URL:</label>
+        <input type="text" id="supabaseUrl" placeholder="https://your-project-id.supabase.co">
+    </div>
+    
+    <div class="form-group">
+        <label for="supabaseKey">Supabase Anon Key:</label>
+        <input type="text" id="supabaseKey" placeholder="your-anon-key">
+    </div>
+    
+    <button id="testConnection">Test Connection</button>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById('testConnection').addEventListener('click', async function() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing connection...';
+            resultDiv.className = '';
+            
+            const supabaseUrl = document.getElementById('supabaseUrl').value.trim();
+            const supabaseKey = document.getElementById('supabaseKey').value.trim();
+            
+            if (!supabaseUrl || !supabaseKey) {
+                resultDiv.innerHTML = 'Please enter both Supabase URL and Anon Key';
+                resultDiv.className = 'error';
+                return;
+            }
+            
+            try {
+                // First, test if the domain is resolvable
+                resultDiv.innerHTML = `Step 1: Testing if domain ${supabaseUrl} is resolvable...`;
+                
+                try {
+                    const domainCheckResponse = await fetch(`${supabaseUrl}/ping`, { 
+                        method: 'GET',
+                        mode: 'cors',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    resultDiv.innerHTML += `\nDomain is reachable! Status: ${domainCheckResponse.status}`;
+                } catch (domainError) {
+                    resultDiv.innerHTML += `\nError: Cannot resolve domain. Error: ${domainError.message}`;
+                    resultDiv.className = 'error';
+                    resultDiv.innerHTML += `\n\nPossible solutions:
+1. Check if the Supabase URL is correct
+2. Check your internet connection
+3. Try accessing ${supabaseUrl} directly in your browser
+4. Make sure you're using https:// prefix`;
+                    return;
+                }
+                
+                // Now try to initialize the Supabase client
+                resultDiv.innerHTML += `\n\nStep 2: Initializing Supabase client...`;
+                
+                const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+                
+                resultDiv.innerHTML += `\nSupabase client initialized successfully!`;
+                
+                // Try to make an auth call
+                resultDiv.innerHTML += `\n\nStep 3: Testing authentication API...`;
+                
+                const { data, error } = await supabase.auth.getSession();
+                
+                if (error) {
+                    throw error;
+                }
+                
+                resultDiv.innerHTML += `\nAuthentication API working correctly!`;
+                resultDiv.innerHTML += `\n\nConnection test successful! Your Supabase configuration is working.`;
+                resultDiv.className = 'success';
+                
+            } catch (error) {
+                resultDiv.innerHTML += `\n\nError: ${error.message}`;
+                resultDiv.className = 'error';
+                
+                // Provide troubleshooting guidance based on the error
+                if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                    resultDiv.innerHTML += `\n\nPossible network issues:
+1. Check your internet connection
+2. Verify the Supabase URL format (should be https://your-project-id.supabase.co)
+3. Make sure your Supabase project is active`;
+                } else if (error.message.includes('key')) {
+                    resultDiv.innerHTML += `\n\nPossible API key issues:
+1. Verify your anon key is correct
+2. Make sure you're using the anon/public key, not the service role key`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
