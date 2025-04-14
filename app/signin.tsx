@@ -101,7 +101,7 @@ export default function SignInPage() {
           />
           <div className="relative z-10 space-y-8">
             <div>
-              <h2 className="text-4xl font-bold">Dynamic Shipping</h2>
+              <h2 className="text-4xl font-bold">Dynamic Shipping and Logistics</h2>
               <p className="mt-4 text-xl">
                 Ship smarter. Track better. Deliver faster.
               </p>

@@ -36,7 +36,7 @@ export default function HomePage() {
   const testimonials = [
     {
       quote:
-        "Dynamic Shipping made my business deliveries seamless! Their tracking system gives me peace of mind knowing exactly where my packages are.",
+        "Dynamic Shipping and Logistics made my business deliveries seamless! Their tracking system gives me peace of mind knowing exactly where my packages are.",
       name: "John Mintah",
       title: "Business Owner",
       image: "/man.jpg",
@@ -117,7 +117,7 @@ export default function HomePage() {
                 <Package2 className="relative h-7 w-7 text-primary transform group-hover:scale-110 transition-transform duration-300" />
               </div>
               <span className="hidden sm:inline-block relative">
-                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic</span> Shipping Services
+                <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic</span> Shipping and Logistics
               </span>
               <span className="inline-block sm:hidden relative">
                 <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic</span>
@@ -180,7 +180,7 @@ export default function HomePage() {
                       <Package2 className="relative h-6 w-6 text-primary" />
                     </div>
                     <span>
-                      <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic</span>
+                      <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic Shipping and Logistics</span> 
                     </span>
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)} className="text-foreground relative group">
@@ -654,7 +654,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">What Our Customers Say</h2>
               <p className="mt-4 text-foreground/60 max-w-2xl mx-auto">
                 Don't just take our word for it. Here's what our customers have to say about their experience with
-                Dynamic Shipping Services.
+                Dynamic Shipping and Logistics.
               </p>
             </div>
 
@@ -828,7 +828,7 @@ export default function HomePage() {
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-cta-text mb-6">Ready to Ship with Us?</h2>
                   <p className="text-lg text-cta-text/70 mb-10 max-w-xl mx-auto">
-                    Join thousands of satisfied customers who trust Dynamic Shipping Services for their logistics needs.
+                    Join thousands of satisfied customers who trust Dynamic Shipping and Logistics for their logistics needs.
                   </p>
 
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -898,8 +898,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="text-xl font-bold">
-                  <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic</span>
-                  <span className="text-foreground"> Shipping</span>
+                  <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Dynamic Shipping and Logistics</span>
                 </div>
               </Link>
               
@@ -1064,7 +1063,7 @@ export default function HomePage() {
           {/* Bottom Section */}
           <div className="mt-12 pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-foreground/50 text-xs">
-              &copy; {new Date().getFullYear()} Dynamic Shipping and Logistics. All rights reserved. | Developed by Dynamic Logistics Solutions
+              &copy; {new Date().getFullYear()} Dynamic Shipping and Logistics. All rights reserved. | Developed by <a href="https://wa.me/233542855399" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200">Ecstasy Geospatial Services</a>
             </div>
             
             <div className="flex gap-6">
