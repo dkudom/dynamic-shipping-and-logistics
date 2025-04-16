@@ -269,25 +269,22 @@ export default function GetStartedPage() {
             <div className="grid gap-8 md:grid-cols-3">
               {[
                 {
-                  quote:
-                    "Switching to Dynamic Shipping and Logistics has saved our business thousands in shipping costs while improving delivery times.",
-                  name: "Sarah Johnson",
-                  title: "E-commerce Manager",
-                  image: "/placeholder.svg?height=64&width=64",
+                  quote: "I've been using Dynamic Shipping for my online store and the tracking features are incredible. My customers love the real-time updates.",
+                  name: "Jane Cooper",
+                  title: "E-commerce Owner",
+                  image: "/woman.jpg",
                 },
                 {
-                  quote:
-                    "The tracking system is incredible. My customers love being able to see exactly where their packages are at all times.",
-                  name: "Michael Chen",
-                  title: "Online Retailer",
-                  image: "/placeholder.svg?height=64&width=64",
+                  quote: "The dashboard is intuitive and their customer service team is always ready to help. Highly recommended!",
+                  name: "Robert Johnson",
+                  title: "Logistics Manager",
+                  image: "/man.jpg",
                 },
                 {
-                  quote:
-                    "Their customer service is outstanding. Any time we've had an issue, they've resolved it immediately.",
-                  name: "Jessica Williams",
+                  quote: "Dynamic Shipping has streamlined our entire logistics operation. We ship to 12 countries seamlessly.",
+                  name: "Samuel Owusu",
                   title: "Operations Director",
-                  image: "/placeholder.svg?height=64&width=64",
+                  image: "/kente.jpg",
                 },
               ].map((testimonial, index) => (
                 <div key={index} className="relative rounded-2xl bg-gradient-to-br from-black to-[#001a4d]/50 p-[1px]">
@@ -296,7 +293,7 @@ export default function GetStartedPage() {
                     <div className="flex items-center">
                       <div className="mr-4 h-12 w-12 overflow-hidden rounded-full border border-[#003087]">
                         <Image
-                          src={testimonial.image || "/placeholder.svg"}
+                          src={testimonial.image}
                           alt={`${testimonial.name} profile picture`}
                           width={48}
                           height={48}

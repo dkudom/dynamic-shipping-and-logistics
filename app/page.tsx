@@ -674,7 +674,7 @@ export default function HomePage() {
                         <div className="flex items-center mb-6">
                           <div className="mr-4 h-16 w-16 overflow-hidden rounded-full border-2 border-primary/20 bg-primary/5">
                             <Image
-                              src={testimonial.image || "/man.jpg"}
+                              src={testimonial.image}
                               alt={`${testimonial.name} profile picture`}
                               width={64}
                               height={64}
@@ -748,7 +748,7 @@ export default function HomePage() {
                 <div className="flex items-center mb-6">
                   <div className="mr-4 h-14 w-14 overflow-hidden rounded-full border-2 border-primary/20 bg-primary/5">
                     <Image
-                      src={testimonials[activeTestimonial].image || "/placeholder.svg"}
+                      src={testimonials[activeTestimonial].image}
                       alt={`${testimonials[activeTestimonial].name} profile picture`}
                       width={56}
                       height={56}
@@ -805,6 +805,138 @@ export default function HomePage() {
                 >
                   <ChevronRight className="h-4 w-4" />
                 </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Section */}
+        <section className="relative py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-background to-primary/20"></div>
+          
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-background/40 rounded-full blur-3xl"></div>
+
+          <div className="container relative mx-auto px-4">
+            <div className="mx-auto max-w-3xl text-center mb-16">
+              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm text-primary backdrop-blur-sm mb-4">
+                <span className="mr-2 flex h-2 w-2 rounded-full bg-[#2ECC71]"></span>
+                Our Portfolio
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Our Gallery</h2>
+              <p className="text-lg text-foreground/70 mb-10 max-w-xl mx-auto">
+                Explore our shipping operations and logistics solutions through our image gallery.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Row 1 */}
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/1.jpg" 
+                  alt="Shipping containers at port" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Container Shipping</h3>
+                  <p className="text-sm text-white/80">International freight services</p>
+                </div>
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/2.jpg" 
+                  alt="Warehouse operations" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Warehouse Operations</h3>
+                  <p className="text-sm text-white/80">Efficient storage solutions</p>
+                </div>
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/3.jpg" 
+                  alt="Delivery truck" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Ground Transport</h3>
+                  <p className="text-sm text-white/80">Last-mile delivery services</p>
+                </div>
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/4.jpg" 
+                  alt="Air freight" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Air Freight</h3>
+                  <p className="text-sm text-white/80">Express international shipping</p>
+                </div>
+              </div>
+              
+              {/* Row 2 */}
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/5.jpg" 
+                  alt="Ship loading operation" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Port Operations</h3>
+                  <p className="text-sm text-white/80">Efficient loading and unloading</p>
+                </div>
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/6.jpg" 
+                  alt="Logistics planning" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Logistics Planning</h3>
+                  <p className="text-sm text-white/80">Strategic route optimization</p>
+                </div>
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/7.jpg" 
+                  alt="Package sorting" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Package Sorting</h3>
+                  <p className="text-sm text-white/80">Automated distribution systems</p>
+                </div>
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-xl border border-border/40 shadow-md group">
+                <Image 
+                  src="/images/8.jpg" 
+                  alt="Customer receiving package" 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-lg font-semibold">Delivery Completion</h3>
+                  <p className="text-sm text-white/80">Customer satisfaction guaranteed</p>
+                </div>
               </div>
             </div>
           </div>
@@ -887,9 +1019,9 @@ export default function HomePage() {
         <div className="absolute -right-32 bottom-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
         
         <div className="container mx-auto px-4 relative">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
             {/* Brand Column */}
-            <div className="md:col-span-4 space-y-6">
+            <div className="md:col-span-6 space-y-6 p-4 rounded-lg hover:bg-primary/5 transition-all duration-300">
               <Link href="/" className="inline-flex items-center gap-2 group">
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg group-hover:bg-primary/30 transition-all duration-300"></div>
@@ -939,7 +1071,7 @@ export default function HomePage() {
             </div>
             
             {/* Quick Links */}
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 p-4 rounded-lg hover:bg-primary/5 transition-all duration-300 md:border-none border-t border-border/20 pt-8 md:pt-4">
               <h3 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase relative inline-block">
                 Company
                 <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-primary/70 rounded-full"></span>
@@ -951,74 +1083,16 @@ export default function HomePage() {
                     <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
                   </Link>
                 </li>
-                <li>
-                  <Link href="/careers" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>Careers</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>Blog</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/press" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>Press</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Services */}
-            <div className="md:col-span-2">
-              <h3 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase relative inline-block">
-                Services
-                <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-primary/70 rounded-full"></span>
-              </h3>
-              <ul className="space-y-3">
-                <li>
-                  <Link href="/services/international" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>International</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/domestic" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>Domestic</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/express" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>Express</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/ecommerce" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>E-commerce</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
               </ul>
             </div>
             
             {/* Support */}
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 p-4 rounded-lg hover:bg-primary/5 transition-all duration-300 md:border-none border-t border-border/20 pt-8 md:pt-4">
               <h3 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase relative inline-block">
                 Support
                 <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-primary/70 rounded-full"></span>
               </h3>
               <ul className="space-y-3">
-                <li>
-                  <Link href="/help" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>Help Center</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
                 <li>
                   <Link href="/contact" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
                     <span>Contact Us</span>
@@ -1031,17 +1105,11 @@ export default function HomePage() {
                     <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
                   </Link>
                 </li>
-                <li>
-                  <Link href="/tracking" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-200 inline-flex items-center gap-1 group">
-                    <span>Tracking</span>
-                    <ArrowRight className="h-3 w-0 group-hover:w-3 transition-all duration-300 overflow-hidden opacity-0 group-hover:opacity-100" />
-                  </Link>
-                </li>
               </ul>
             </div>
             
             {/* Newsletter */}
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 p-4 rounded-lg hover:bg-primary/5 transition-all duration-300 md:border-none border-t border-border/20 pt-8 md:pt-4">
               <h3 className="text-foreground font-semibold mb-4 text-sm tracking-wider uppercase relative inline-block">
                 Stay Updated
                 <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-primary/70 rounded-full"></span>
@@ -1061,19 +1129,19 @@ export default function HomePage() {
           </div>
           
           {/* Bottom Section */}
-          <div className="mt-12 pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-foreground/50 text-xs">
-              &copy; {new Date().getFullYear()} Dynamic Shipping and Logistics. All rights reserved. | Developed by <a href="https://wa.me/233542855399" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200">Ecstasy Geospatial Services</a>
+          <div className="mt-16 pt-8 border-t border-border/20 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-foreground/50 text-xs text-center md:text-left">
+              &copy; {new Date().getFullYear()} Dynamic Shipping and Logistics. All rights reserved. | Developed by <a href="https://wa.me/233542855399" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200 hover:underline">Ecstasy Geospatial Services</a>
             </div>
             
-            <div className="flex gap-6">
-              <Link href="/privacy" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200">
+            <div className="flex gap-8">
+              <Link href="/privacy" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200 hover:underline">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200">
+              <Link href="/terms" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200 hover:underline">
                 Terms of Service
               </Link>
-              <Link href="/cookies" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200">
+              <Link href="/cookies" className="text-foreground/50 hover:text-primary text-xs transition-colors duration-200 hover:underline">
                 Cookies
               </Link>
             </div>

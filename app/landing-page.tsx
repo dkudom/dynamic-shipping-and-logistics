@@ -35,7 +35,7 @@ export default function LandingPage() {
         "Dynamic Shipping and Logistics made my business deliveries seamless! Their tracking system gives me peace of mind knowing exactly where my packages are.",
       name: "John Doe",
       title: "Business Owner",
-      image: "/placeholder.svg?height=64&width=64",
+      image: "/man.jpg",
       rating: 5,
     },
     {
@@ -43,7 +43,7 @@ export default function LandingPage() {
         "I love the real-time tracking feature! It's incredibly accurate and the interface is so easy to use. Best shipping service I've tried.",
       name: "Sarah Lee",
       title: "Individual Customer",
-      image: "/placeholder.svg?height=64&width=64",
+      image: "/woman.jpg",
       rating: 5,
     },
     {
@@ -51,7 +51,7 @@ export default function LandingPage() {
         "Fast and reliable service every time. Their customer support team is responsive and always goes above and beyond to help.",
       name: "Mike Brown",
       title: "Business Owner",
-      image: "/placeholder.svg?height=64&width=64",
+      image: "/Kente.jpg",
       rating: 4,
     },
   ]
@@ -434,7 +434,7 @@ export default function LandingPage() {
                           <div className="flex items-center mb-6">
                             <div className="mr-4 h-16 w-16 overflow-hidden rounded-full border-2 border-[#003087]">
                               <Image
-                                src={testimonial.image || "/placeholder.svg"}
+                                src={testimonial.image}
                                 alt={`${testimonial.name} profile picture`}
                                 width={64}
                                 height={64}
@@ -489,7 +489,7 @@ export default function LandingPage() {
                     <div className="flex items-center mb-6">
                       <div className="mr-4 h-14 w-14 overflow-hidden rounded-full border-2 border-[#003087]">
                         <Image
-                          src={testimonials[activeTestimonial].image || "/placeholder.svg"}
+                          src={testimonials[activeTestimonial].image}
                           alt={`${testimonials[activeTestimonial].name} profile picture`}
                           width={56}
                           height={56}
@@ -555,52 +555,90 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Call to Action Section */}
+        {/* Gallery Section */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-black to-[#001a4d]"></div>
-          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=400&width=1600')] opacity-10 mix-blend-overlay"></div>
+          <div className="absolute inset-0 opacity-10 mix-blend-overlay"></div>
 
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/4 w-72 h-72 bg-[#003087]/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-black/40 rounded-full blur-3xl"></div>
 
           <div className="container relative mx-auto px-4">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Ship with Us?</h2>
+            <div className="mx-auto max-w-3xl text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Our Gallery</h2>
               <p className="text-lg text-white/70 mb-10 max-w-xl mx-auto">
-                Join thousands of satisfied customers who trust Dynamic Shipping and Logistics for their logistics needs.
+                Explore our shipping operations and logistics solutions through our image gallery.
               </p>
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/get-started">
-                  <Button className="bg-[#003087] text-white hover:bg-[#003087]/90 px-8 py-6 text-lg rounded-lg shadow-lg shadow-[#003087]/20 hover:shadow-xl hover:shadow-[#003087]/30 transition-all duration-300">
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button
-                    variant="outline"
-                    className="border-white/10 bg-white/5 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-lg backdrop-blur-sm"
-                  >
-                    Contact Sales
-                  </Button>
-                </Link>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Row 1 */}
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery1.jpg" 
+                  alt="Shipping containers at port" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
               </div>
-
-              <div className="mt-12 flex items-center justify-center gap-8">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-[#2ECC71]" />
-                  <span className="text-sm text-white/70">No hidden fees</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-[#2ECC71]" />
-                  <span className="text-sm text-white/70">Cancel anytime</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-[#2ECC71]" />
-                  <span className="text-sm text-white/70">24/7 support</span>
-                </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery2.jpg" 
+                  alt="Warehouse operations" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery3.jpg" 
+                  alt="Delivery truck" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery4.jpg" 
+                  alt="Air freight" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              
+              {/* Row 2 */}
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery5.jpg" 
+                  alt="Ship loading operation" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery6.jpg" 
+                  alt="Logistics planning" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery7.jpg" 
+                  alt="Package sorting" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="relative aspect-square overflow-hidden rounded-lg">
+                <Image 
+                  src="/gallery8.jpg" 
+                  alt="Customer receiving package" 
+                  fill 
+                  className="object-cover hover:scale-110 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
